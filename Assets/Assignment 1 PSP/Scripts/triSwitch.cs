@@ -5,12 +5,12 @@ using UnityEngine;
 public class triSwitch : MonoBehaviour
 {
     public GameObject switchPlatform;
-    public bool switchIsActive = true;
+    public bool switchIsActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        switchPlatform.SetActive(true);
+        switchPlatform.SetActive(false); //turn off switch platform when starting the program
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class triSwitch : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (switchIsActive == true)
+        if (switchIsActive == true) // turn the switch on and off on collision
         {
             switchPlatform.SetActive(false); switchIsActive = false;
         }
